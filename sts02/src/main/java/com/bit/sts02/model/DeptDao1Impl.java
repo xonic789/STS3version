@@ -24,8 +24,15 @@ public class DeptDao1Impl implements DeptDao {
 	public List<DeptVo> selectAll() throws SQLException{
 		String sql="select * from dept";
 		List<DeptVo> list = new ArrayList<DeptVo>();
+//		Connection conn1 = jdbcConnectionPool.getConnection();
+//		conn1.createStatement().execute("create table dept(\r\n" + 
+//				"deptno number  primary key,\r\n" + 
+//				"dname varchar2(10) ,\r\n" + 
+//				"loc varchar2(10) \r\n" + 
+//				");");
+//		conn1.close();
 		try(
-				Connection conn = jdbcConnectionPool.getConnection();
+				Connection conn=jdbcConnectionPool.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				ResultSet rs = pstmt.executeQuery();
 				
