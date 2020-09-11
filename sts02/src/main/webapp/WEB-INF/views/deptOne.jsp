@@ -30,37 +30,44 @@
 	</div>
 </nav>
 <div class="jumbotron">
-  <h1>DEPT LIST PAGE</h1>
+  <h1>입력 페이지!</h1>
 </div>
 <div class="container">
 	<div class="row" id="header">
 		<div class="col-md-12">
-		<div class="page-header">
-			<h1>DEPT LIST <small>DEPT TABLE</small></h1>
-		</div>
+			<div class="page-header">
+				<h1>DEPT ADD <small>DEPT TABLE</small></h1>
+			</div>
 		</div>
 	</div>
 	<div class="row" id="context">
 		<div class="col-md-12">
-			<table class="table">
-			<thead>
-				<tr>
-					<th>deptno</th>
-					<th>dname</th>
-					<th>loc</th>
-				</tr>
-			</thead>
-			<tbody>
-			<c:forEach items="${list }" var="bean">
-				<tr>
-					<td><a href="detail?deptno=${bean.deptno }">${bean.deptno }</a></td>
-					<td><a href="detail?deptno=${bean.deptno }">${bean.dname }</a></td>
-					<td><a href="detail?deptno=${bean.deptno }">${bean.loc }</a></td>
-				</tr>
-			</c:forEach>
-			</tbody>
-			</table>
-			<a href="add" class="btn btn-primary" role="btn">입력</a>
+			<form class="form-horizontal" method="post">
+			  <div class="form-group">
+			    <label for="deptno" class="col-sm-2 control-label">deptno</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="deptno" id="deptno" value="${bean.deptno }" } readonly>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="dname" class="col-sm-2 control-label">dname</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="dname" id="dname" value="${bean.dname } " readonly>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="loc" class="col-sm-2 control-label">loc</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="loc" id="loc" value="${bean.loc }" readonly>
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-default">수 정</button>
+			    </div>
+			  </div>
+			</form>
 		</div>
 	</div>
 	<div class="row" id="footer">
