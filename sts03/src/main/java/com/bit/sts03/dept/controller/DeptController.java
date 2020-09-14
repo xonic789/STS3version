@@ -30,11 +30,16 @@ public class DeptController {
 		model.addAttribute("list",dept03Dao.selectAll());
 		return "dept/list";
 	}
-	@RequestMapping("/{deptno}")
+	@RequestMapping(value = "/{deptno}" ,method = RequestMethod.GET)
 	public String one(@PathVariable("deptno") int deptno,Model model) throws SQLException {
 		model.addAttribute("title","Detail");
 		model.addAttribute("bean",dept03Dao.selectOne(deptno));
 		return "dept/form";
+	}
+	@RequestMapping(value = "/{deptno}" ,method = RequestMethod.POST)
+	public String update(@PathVariable("deptno") int deptno,@ModelAttribute("bean") Dept03Vo bean) throws SQLException {
+		dept03Dao.updateOne(bean);
+		return "redirect:./"+deptno;
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String add(Model model) {
