@@ -1,3 +1,8 @@
 .metadata/
 Servers/
 sts02/.settings/
+sts03/.settings/
+sts03/.classpath
+sts03/.project
+sts03/.springBeans
+sts03/target/
