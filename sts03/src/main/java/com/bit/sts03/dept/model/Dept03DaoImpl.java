@@ -28,7 +28,7 @@ public class Dept03DaoImpl implements Dept03Dao {
 	
 	@Override
 	public List<Dept03Vo> selectAll() throws SQLException{
-		String sql="select * from dept03 order by deptno desc";
+		String sql="select * from dept03 order by deptno asc";
 		
 		return jdbcTemplate.query(sql, rowMapper);
 	}
