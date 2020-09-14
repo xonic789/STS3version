@@ -27,9 +27,32 @@ public class Dept03DaoImpl implements Dept03Dao {
 	}
 	
 	@Override
-	public List<Dept03Vo> selectAll(){
+	public List<Dept03Vo> selectAll() throws SQLException{
 		String sql="select * from dept03 order by deptno desc";
 		
 		return jdbcTemplate.query(sql, rowMapper);
+	}
+	
+	public Dept03Vo selectOne(int deptno) throws SQLException {
+		String sql="select * from dept03 where deptno=?";
+		
+		return jdbcTemplate.queryForObject(sql, rowMapper,deptno);
+	}
+	public void insertOne(Dept03Vo bean) throws SQLException{
+		String sql="insert into dept03 (dname,loc) values (?,?)";
+		jdbcTemplate.update(sql,bean.getDname(),bean.getLoc());
+	}
+
+	@Override
+	public int updateOne(Dept03Vo bean) throws SQLException {
+		String sql="update dept03 set dname=?,loc=? where deptno=?";
+		
+		return jdbcTemplate.update(sql,bean.getDname(),bean.getLoc(),bean.getDeptno());
+	}
+
+	@Override
+	public int zdeleteOne(int deptno) throws SQLException {
+		String sql="delete from dept03 where deptno=?";
+		return jdbcTemplate.update(sql,deptno);
 	}
 }
