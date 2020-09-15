@@ -16,11 +16,10 @@
 </div>
 <div class="list-group">
 	<c:forEach items="${list }" var="bean">
-	  <a href="${bean.sabun }" class="list-group-item active">
+	  <a href="${bean.sabun }" class="list-group-item">
 	    <h4 class="list-group-item-heading">${bean.name }</h4>
 	    <p class="list-group-item-text">${bean.nalja }</p>
 	  </a>
-		
 	</c:forEach>
   
 </div>

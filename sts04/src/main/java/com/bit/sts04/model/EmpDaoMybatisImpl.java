@@ -3,35 +3,25 @@ package com.bit.sts04.model;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
+import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import com.bit.sts04.model.entity.EmpVo;
-import com.ibatis.sqlmap.client.SqlMapClient;
 
-
-@Repository
-public class EmpDaoIbatisImpl implements EmpDao {
-	
-	
-	@Autowired
-	SqlMapClient sqlMapClient;
-	
+public class EmpDaoMybatisImpl extends SqlSessionDaoSupport implements EmpDao {
 	
 	@Override
 	public List<EmpVo> selectAll() throws SQLException {
-		return sqlMapClient.queryForList("selectAll");
+		return getSqlSession().selectList("bit.selectAll");
 	}
 
 	@Override
 	public EmpVo selectOne(int key) throws SQLException {
-		return null;
+		return getSqlSession().selectOne("bit.selectOne",key);
 	}
 
 	@Override
 	public void insertOne(EmpVo bean) throws SQLException {
-		sqlMapClient.insert("insertOne",bean);
+		getSqlSession().insert("bit.insertOne",bean);
 	}
 
 	@Override
