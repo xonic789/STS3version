@@ -14,17 +14,14 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 @Repository
 public class EmpDaoIbatisImpl implements EmpDao {
 	
+	
 	@Autowired
 	SqlMapClient sqlMapClient;
 	
-	public EmpDaoIbatisImpl() {
-		System.out.println("create Dao");
-	}
 	
 	@Override
 	public List<EmpVo> selectAll() throws SQLException {
-		System.out.println(sqlMapClient);
-		return null;
+		return sqlMapClient.queryForList("selectAll");
 	}
 
 	@Override
@@ -34,7 +31,7 @@ public class EmpDaoIbatisImpl implements EmpDao {
 
 	@Override
 	public void insertOne(EmpVo bean) throws SQLException {
-
+		sqlMapClient.insert("insertOne",bean);
 	}
 
 	@Override

@@ -12,6 +12,56 @@ public class EmpVo {
 	
 	public EmpVo() {
 	}
+	
+
+	public int getSabun() {
+		return sabun;
+	}
+
+
+	public void setSabun(int sabun) {
+		this.sabun = sabun;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public Timestamp getNalja() {
+		return nalja;
+	}
+
+
+	public void setNalja(Timestamp nalja) {
+		this.nalja = nalja;
+	}
+
+
+	public int getPay() {
+		return pay;
+	}
+
+
+	public void setPay(int pay) {
+		this.pay = pay;
+	}
+
+
+	public int getDeptno() {
+		return deptno;
+	}
+
+
+	public void setDeptno(int deptno) {
+		this.deptno = deptno;
+	}
 
 
 	@Override
@@ -72,53 +122,4 @@ public class EmpVo {
 				+ "]";
 	}
 
-
-	public int getSabun() {
-		return sabun;
-	}
-
-
-	public void setSabun(int sabun) {
-		this.sabun = sabun;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public Timestamp getNalja() {
-		return nalja;
-	}
-
-
-	public void setNalja(Timestamp nalja) {
-		this.nalja = nalja;
-	}
-
-
-	public int getPay() {
-		return pay;
-	}
-
-
-	public void setPay(int pay) {
-		this.pay = pay;
-	}
-
-
-	public int getDeptno() {
-		return deptno;
-	}
-
-
-	public void setDeptno(int deptno) {
-		this.deptno = deptno;
-	}
 }
