@@ -10,4 +10,6 @@ sts03.7z
 sts04/.settings/
 sts04/target/
 sts05/.settings/
-sts05/target/classes/com/bit/sts05/service/DeptServiceImpl.class
+.settings/
+
+sts06/target/
