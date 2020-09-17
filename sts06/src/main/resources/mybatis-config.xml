@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
   <configuration>
   	<typeAliases>
-  		<typeAlias alias="EmpVo" type="com.bit.sts06.emp.model.entity.EmpVo"/>
+  		<typeAlias alias="empBean" type="com.bit.sts06.emp.model.entity.EmpVo"/>
   	</typeAliases>
   	<mappers>
   		<mapper resource="mapper/empMapper.xml"/>

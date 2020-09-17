@@ -17,5 +17,11 @@
 		p:dataSource-ref="dataSource"
 		p:configLocation="classpath:/mybatis-config.xml"
 	/>
-		
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory"/>
+	</bean>
+	
+	<context:component-scan base-package="com.bit.sts06.emp.model"/>
 </beans>
+
+

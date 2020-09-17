@@ -6,12 +6,10 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
 
-<P>sabun: ${bean} </P>
-<P>sabun: ${bean.sabun } </P>
-<P>name: ${bean.name } </P>
+		
+		
+	
+
 </body>
 </html>
