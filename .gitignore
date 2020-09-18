@@ -13,3 +13,5 @@ sts05/.settings/
 .settings/
 
 sts06/target/
+/target/
+target/
